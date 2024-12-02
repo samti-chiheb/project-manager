@@ -4,7 +4,7 @@ import { setIsSidebarCollapsed } from "@/state";
 import { ChevronDown, ChevronUp, LockIcon, X } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
-import SidebarLink from "./SidebarLinks";
+import SidebarLink from "./SidebarLink";
 import sidebarLinks from "./sidebarLinks";
 import priorityLinks from "./priorityLinks";
 
