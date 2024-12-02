@@ -1,13 +1,23 @@
 "use client";
-import { LockIcon } from "lucide-react";
+import { useAppDispatch, useAppSelector } from "@/app/redux";
+import { setIsSidebarCollapsed } from "@/state";
+import { ChevronDown, ChevronUp, LockIcon, X } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
+import SidebarLink from "./SidebarLinks";
+import sidebarLinks from "./sidebarLinks";
+import priorityLinks from "./priorityLinks";
 
 const Sidebar = () => {
   const [showProjects, setShowProjects] = useState(true);
   const [showPriority, setShowPriority] = useState(true);
 
-  const sidebarClassNames = `fixed flex flex-col h-[100%] justify-between shadow-xl transition-all duration-300 h-full z-40 dark:bg-black overflow-y-auto bg-white w-64`;
+  const dispatch = useAppDispatch();
+  const isSidebarCollapsed = useAppSelector(
+    (state) => state.global.isSidebarCollapsed,
+  );
+
+  const sidebarClassNames = `fixed flex flex-col h-[100%] justify-between shadow-xl transition-all duration-300 h-full z-40 dark:bg-black overflow-y-auto bg-white ${isSidebarCollapsed ? "w-0 hidden" : "w-64"}`;
 
   return (
     <div className={sidebarClassNames}>
@@ -17,6 +27,16 @@ const Sidebar = () => {
           <div className="text-xl font-bold text-gray-800 dark:text-white">
             PManager
           </div>
+          {isSidebarCollapsed ? null : (
+            <button
+              className="py-3"
+              onClick={() => {
+                dispatch(setIsSidebarCollapsed(!isSidebarCollapsed));
+              }}
+            >
+              <X className="h-6 w-6 text-gray-800 hover:text-gray-500 dark:text-white" />
+            </button>
+          )}
         </div>
 
         {/* team */}
@@ -32,6 +52,49 @@ const Sidebar = () => {
             </div>
           </div>
         </div>
+
+        {/* navbar links  */}
+        <nav className="z-10 w-full">
+          {sidebarLinks.map(({ icon, label, href }) => (
+            <SidebarLink key={href} icon={icon} label={label} href={href} />
+          ))}
+        </nav>
+
+        {/* project links  */}
+        <button
+          className="flex w-full items-center justify-between px-8 py-3 text-gray-500"
+          onClick={() => {
+            setShowProjects((prev) => !prev);
+          }}
+        >
+          <span className="">Projects</span>
+          {showProjects ? (
+            <ChevronUp className="h-5 w-5" />
+          ) : (
+            <ChevronDown className="h-5 w-5" />
+          )}
+        </button>
+
+        {/* projects list  */}
+
+        {/* priority links */}
+        <button
+          className="flex w-full items-center justify-between px-8 py-3 text-gray-500"
+          onClick={() => {
+            setShowPriority((prev) => !prev);
+          }}
+        >
+          <span className="">Priority</span>
+          {showPriority ? (
+            <ChevronUp className="h-5 w-5" />
+          ) : (
+            <ChevronDown className="h-5 w-5" />
+          )}
+        </button>
+        {showPriority &&
+          priorityLinks.map(({ icon, label, href }) => (
+            <SidebarLink key={href} icon={icon} label={label} href={href} />
+          ))}
       </div>
     </div>
   );
