@@ -3,14 +3,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 
-interface SidebarLinkProps {
+interface SidebarLinkItemProps {
   href: string;
   icon: LucideIcon;
   label: string;
 }
 
 
-const SidebarLink = ({ href, icon: Icon, label }: SidebarLinkProps) => {
+const SidebarLinkItem = ({ href, icon: Icon, label }: SidebarLinkItemProps) => {
   const pathname = usePathname();
   const isActive =
     pathname === href || (pathname === "/" && href === "/dashboard");
@@ -32,4 +32,4 @@ const SidebarLink = ({ href, icon: Icon, label }: SidebarLinkProps) => {
   );
 };
 
-export default SidebarLink
+export default SidebarLinkItem

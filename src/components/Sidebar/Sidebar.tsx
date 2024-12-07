@@ -4,7 +4,7 @@ import { setIsSidebarCollapsed } from "@/state";
 import { ChevronDown, ChevronUp, LockIcon, X } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
-import SidebarLink from "./SidebarLink";
+import SidebarLink from "./SidebarLinkItem";
 import sidebarLinks from "./sidebarLinks";
 import priorityLinks from "./priorityLinks";
 
@@ -21,7 +21,7 @@ const Sidebar = () => {
 
   return (
     <div className={sidebarClassNames}>
-      <div className="[h-100%] flex w-full flex-col justify-start">
+      <div className="[h-100%] flex w-full flex-col justify-start ">
         {/* top logo  */}
         <div className="z-50 flex min-h-[56px] w-64 items-center justify-between bg-white px-6 pt-3 dark:bg-black">
           <div className="text-xl font-bold text-gray-800 dark:text-white">
