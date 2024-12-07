@@ -27,7 +27,7 @@ export default {
         "dark-bg": "#101214",
         "dark-secondary": "#1d1f21",
         "dark-tertiary": "#3b3d40",
-        "blue-primairy": "#0275ff",
+        "blue-primary": "#0275ff",
         "storke-dark": "#2d3135",
       },
       backgroundImage: {

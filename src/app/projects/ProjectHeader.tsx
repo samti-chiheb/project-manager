@@ -27,7 +27,7 @@ const ProjectHeader = ({ activeTab, setActiveTab }: Props) => {
       />
       <div className="pb-6 pt-6 lg:pb-4 lg:pt-8">
         <Header
-          name="Product Design Development"
+          name="Product Design Developments"
           buttonComponent={
             <button
               className="bg-blue-primary flex items-center rounded-md px-3 py-2 text-white hover:bg-blue-600"
