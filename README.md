@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Manager (Frontend)
 
-## Getting Started
+## Description
+Project Manager est une application web intuitive permettant de gérer des projets et des équipes. Ce dépôt contient le code source du frontend, développé avec **Next.js** pour une performance et une optimisation accrues grâce au rendu côté serveur (SSR) et à la génération de pages statiques (SSG).
 
-First, run the development server:
+---
 
+## Fonctionnalités principales
+- Création, modification et suppression de projets.
+- Gestion des tâches et assignation aux membres de l’équipe.
+- Suivi en temps réel de l’avancement des projets.
+- Interface utilisateur réactive et ergonomique.
+- Intégration avec une API backend sécurisée.
+
+---
+
+## Prérequis
+Assurez-vous d'avoir les éléments suivants installés sur votre machine :
+- **Node.js** (version 16 ou supérieure)
+- **npm** ou **yarn**
+
+---
+
+## Installation
+1. Clonez ce dépôt :
+   ```bash
+   git clone https://github.com/samti-chiheb/project-manager.git
+   ```
+
+2. Accédez au répertoire du projet :
+   ```bash
+   cd project-manager
+   ```
+
+3. Installez les dépendances :
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
+
+4. Configurez les variables d'environnement :
+   - Créez un fichier `.env.local` à la racine du projet.
+   - Ajoutez les variables nécessaires, comme l'URL de l'API backend :
+     ```env
+     NEXT_PUBLIC_API_URL=http://localhost:5000
+     ```
+
+---
+
+## Démarrage
+Pour lancer le projet en mode développement :
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+L'application sera accessible à l'adresse [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Scripts disponibles
+- `dev` : Lance le serveur de développement.
+- `build` : Compile le projet pour la production.
+- `start` : Lance le serveur en mode production après build.
+- `lint` : Analyse le code pour détecter les erreurs et incohérences.
+
+---
+
+## Technologies utilisées
+- **Framework** : Next.js
+- **Langage** : JavaScript / TypeScript (optionnel)
+- **Style** : CSS/SCSS, Tailwind CSS ou Material-UI
+- **Gestion d'état** : Redux ou Context API
+
+---
+
+## Structure du projet
+```
+project-manager/
+├── components/       # Composants réutilisables
+├── pages/            # Pages gérées par Next.js
+├── public/           # Fichiers statiques
+├── styles/           # Fichiers CSS/SCSS
+├── utils/            # Fonctions utilitaires
+├── .env.local        # Variables d'environnement locales
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contribution
+Les contributions sont les bienvenues ! Pour contribuer :
+1. Forkez le projet.
+2. Créez une branche pour votre fonctionnalité :
+   ```bash
+   git checkout -b feature/ma-fonctionnalite
+   ```
+3. Commitez vos modifications :
+   ```bash
+   git commit -m "Ajout d'une nouvelle fonctionnalité"
+   ```
+4. Poussez vos modifications :
+   ```bash
+   git push origin feature/ma-fonctionnalite
+   ```
+5. Créez une Pull Request.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Licence
+Ce projet est sous licence MIT. Consultez le fichier `LICENSE` pour plus d'informations.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Auteur
+Développé par [Chiheb Eddine](https://github.com/samti-chiheb).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Le repo backend
+Le dépôt du backend est disponible ici : [Project Manager Backend](https://github.com/samti-chiheb/project-manager-backend).
